@@ -25,23 +25,25 @@ public class StudentController {
 
 	@PostMapping
 	public String create(@RequestBody Student student) {
-		return "create successed";
+		Integer id = service.create(student);
+		return "Create Sucessed. New StuID is " + id +"." ;
 	}
 	@GetMapping
 	public List<Student> getAll() {
 		return service.getStudents();
 	}
-	@GetMapping("{studentId}")
+	@GetMapping("/{studentId}")
 	public Student getById(@PathVariable Integer studentId) {
-//		return service.getById(studentId);
-		return null;
+		return service.getById(studentId);
 	}
 	@PutMapping
-	public String update(@RequestBody Student student ) {
-		return "update " + student.name + " successed";
+	public String update(@RequestBody Student student) {
+		service.updeate(student);
+		return "update successed.";
 	}
-	@DeleteMapping("{studentId}")
+	@DeleteMapping("/{studentId}")
 	public String delete(@PathVariable Integer studentId) {
-		return "delete " + studentId + " successed";
+		service.delete(studentId);
+		return "delete successed.";
 	}
 }

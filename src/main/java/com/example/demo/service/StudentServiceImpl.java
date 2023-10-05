@@ -20,24 +20,22 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public Student getById(Integer studentId) {
-		return getById(studentId);
+		return repo.getById(studentId);
 	}
 
 	@Override
 	public Integer create(Student student) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.create(student);
 	}
 
 	@Override
 	public void updeate(Student student) {
-		// TODO Auto-generated method stub
-		
+		repo.update(student);
 	}
 
 	@Override
-	public void delete(Student student) {
-		// TODO Auto-generated method stub
+	public void delete(Integer studentId) {
+		repo.delete(studentId);
 		
 	}
 

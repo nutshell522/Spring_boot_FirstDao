@@ -8,6 +8,6 @@ public interface StudentDao {
 	List<Student> getStudents();
 	Student getById(Integer studentId);
 	Integer create(Student student);
-	void updeate(Student student);
-	void delete(Student student);
+	void update(Student student);
+	void delete(Integer studentId);
 }

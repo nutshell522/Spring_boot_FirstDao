@@ -9,5 +9,5 @@ public interface StudentService {
 	Student getById(Integer studentId);
 	Integer create(Student student);
 	void updeate(Student student);
-	void delete(Student student);
+	void delete(Integer studentId);
 }
